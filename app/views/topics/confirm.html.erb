@@ -1,0 +1,20 @@
+<h3>以下の内容で、送信する。</h3>
+
+<%= form_for(@topic) do |f| %>
+
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :content %>
+  <%= f.hidden_field :image_url_cache %>
+
+  <p>タイトル:<%= @topic.title %></p>
+  <p>内容:<%= @topic.content %></p>
+  <p>写真:<%= picture_img(@topic) %></p>
+  <%= f.submit "登録する" %>
+<% end %>
+
+<%= form_for(@topic, url: new_topic_path, method: 'get') do |f| %>
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :content %>
+  <%= f.hidden_field :image_url_cache %>
+  <%= f.submit "もどる", name:'back' %>
+<% end %>
