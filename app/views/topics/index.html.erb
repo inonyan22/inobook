@@ -4,6 +4,7 @@
 <p><%= link_to "新規投稿", new_topic_path, class: 'btn btn-default'  %></p>
 
 <% @topics.each do |topic| %>
+  <p>投稿者名<%= topic.user.name %></p>
   <p><%= topic.title %></p>
   <p><%= topic.content %></p>
   <p><%= picture_img(topic)%></p>

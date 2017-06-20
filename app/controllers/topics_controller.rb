@@ -5,15 +5,6 @@ class TopicsController < ApplicationController
     @topics = Topic.all
   end
 
-  def create
-    @topic = Topic.new(topic_params)
-      if @topic.save
-      redirect_to topics_path, notice: "投稿しました！"
-      else
-        render 'new'
-      end
-  end
-
   def  new
     if params[:back]
       @topic = Topic.new(topic_params)
@@ -21,6 +12,17 @@ class TopicsController < ApplicationController
       @topic = Topic.new
     end
   end
+
+  def create
+    @topic = Topic.new(topic_params)
+    @topic.user_id = current_user.id
+      if @topic.save
+      redirect_to topics_path, notice: "投稿しました！"
+      else
+        render 'new'
+      end
+  end
+
 
   def edit
   end
@@ -34,6 +36,8 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @comment = @topic.comments.build
+    @comments = @topic.comments
   end
 
   def destroy

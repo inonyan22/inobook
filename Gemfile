@@ -35,12 +35,27 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  #例外処理
+  gem 'pry-rails'
+  gem 'better_errors'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :development do
+  gem 'dotenv-rails'
+  #メール機能
+  gem 'letter_opener_web'
+end
+#SNSログイン用
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
 # 画像アップ用
   gem 'carrierwave'
   gem 'mini_magick'
@@ -48,5 +63,7 @@ group :development, :test do
   gem 'devise'
 #日本語化
   gem 'rails-i18n'
+#シードデータ
+  gem 'faker'
 
-end
+  gem 'twitter-bootstrap-rails'
