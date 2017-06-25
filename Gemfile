@@ -65,5 +65,9 @@ gem 'omniauth-facebook'
   gem 'rails-i18n'
 #シードデータ
   gem 'faker'
-
+#ブートストラップ
   gem 'twitter-bootstrap-rails'
+#通知機能
+  gem 'pusher'
+
+  gem 'fog'

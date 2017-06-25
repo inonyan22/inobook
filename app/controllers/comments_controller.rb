@@ -22,20 +22,12 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    # @comment = Comment.find(params[:id])
-    # @topic = @comment.topic
-    # respond_to do |format|
-    #   if @comment.save
-    #     format.html { redirect_to topic_path(@topic), notice: 'コメントを投稿しました。' }
-    #   else
-    #     format.html { render :new }
-    #   end
-    # end
+    @comment = Comment.find(params[:id])
   end
 
   def update
-    # @comment = Comment.find(params[:id])
-    # @comment.update(comment_params)
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
   end
 
   private

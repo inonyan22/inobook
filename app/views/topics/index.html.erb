@@ -1,15 +1,26 @@
 <p><%= notice %></p>
+<div class="container">
+  <div class="wrapper col-md-9">
 
-<h1>投稿一覧</h1>
-<p><%= link_to "新規投稿", new_topic_path, class: 'btn btn-default'  %></p>
+    <h1>投稿一覧</h1>
 
-<% @topics.each do |topic| %>
-  <p>投稿者名<%= topic.user.name %></p>
-  <p><%= topic.title %></p>
-  <p><%= topic.content %></p>
-  <p><%= picture_img(topic)%></p>
-  <p><%= link_to "詳細画面", topic_path(topic.id), class: 'btn btn-default'  %></p>
-          <p><%= link_to "編集画面", edit_topic_path(topic.id), class: 'btn btn-default' %></p>
-          <p><%= link_to "削除する", topic_path(topic.id), data: {confirm: '本当に削除してよろしいですか？'}, method: :delete, class: 'btn btn-default' %></p>
-
-  <% end %>
+    <% @topics.each do |topic| %>
+      <p><%= profile_img(topic.user) if profile_img(topic.user) %><%= topic.user.name %></p>
+      <p>タイトル：<%= topic.title %></p>
+      <p>投稿内容：<%= topic.content %></p>
+      <p><%= picture_img(topic)%></p>
+      <p><%= link_to "詳細画面", topic_path(topic.id), class: 'btn btn-default'  %></p>
+      <% if current_user.id == topic.user.id %>
+      <p><%= link_to "編集画面", edit_topic_path(topic.id), class: 'btn btn-default' %><%= link_to "削除する", topic_path(topic.id), data: {confirm: '本当に削除してよろしいですか？'}, method: :delete, class: 'btn btn-default' %></p>
+      <% end %>
+      <p>----------------------------------------------------------------</p>
+    <% end %>
+  </div>
+  <div class="wrapper col-md-3">
+    <p><%= link_to "新規投稿", new_topic_path, class: 'btn btn-default'  %></p>
+    <h1>プロフィール</h1>
+    <br>
+    <p>作成者　井上陽介</p>
+    <p>プログラミング6か月目です。</p>
+  </div>
+</div>
