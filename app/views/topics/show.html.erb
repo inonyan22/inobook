@@ -15,7 +15,7 @@
         </div>
           <%= render partial: 'comments/form', locals: { comment: @comment, topic: @topic } %>
           <% if current_user.id == @topic.user_id %>
-            <%= link_to '編集', edit_topic_path(@topic) %> |
+            <%= link_to '編集', edit_topic_path(@topic), class: 'btn btn-default' %> |
           <% end %>
 
           <%= link_to "一覧画面にもどる", topics_path, class: 'btn btn-default' %>

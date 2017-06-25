@@ -1,5 +1,12 @@
 <p><%= notice %></p>
 <div class="container">
+  <div class="wrapper col-md-3">
+    <p><%= link_to "新規投稿", new_topic_path, class: 'btn btn-default'  %></p>
+    <h1>プロフィール</h1>
+    <br>
+    <p>作成者　井上陽介</p>
+    <p>プログラミング6か月目です。</p>
+  </div>
   <div class="wrapper col-md-9">
 
     <h1>投稿一覧</h1>
@@ -16,11 +23,5 @@
       <p>----------------------------------------------------------------</p>
     <% end %>
   </div>
-  <div class="wrapper col-md-3">
-    <p><%= link_to "新規投稿", new_topic_path, class: 'btn btn-default'  %></p>
-    <h1>プロフィール</h1>
-    <br>
-    <p>作成者　井上陽介</p>
-    <p>プログラミング6か月目です。</p>
-  </div>
+
 </div>
