@@ -9,6 +9,5 @@ class NoticeMailer < ApplicationMailer
     @greeting = "Hi"
 
     mail to: "inoue.yousuke.1991@gmail.com"
-    subject: ''
   end
 end
