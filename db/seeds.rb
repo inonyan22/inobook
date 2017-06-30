@@ -6,11 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-100.times do |n|
-  title = "テスト"
-  content = "テスト"
-  Topic.create(
-     title: title,
-     content: content
-   )
- end
+50.times do |n|
+    user_id = "1"
+    title = Faker::Cat.name
+    content = Faker::Cat.registry
+    Topic.create!(
+    user_id: user_id,
+    title: title,
+    content: content
+)
+end
